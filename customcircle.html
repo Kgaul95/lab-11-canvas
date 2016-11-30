@@ -7,18 +7,40 @@
 </canvas>
 <script>
 
-function draw(){
-	var sketch = document.getElementById('sketch');
-	var context = sketch.getContext("2d");
 
-	context.fillstyle = "#00ff00"
+
+function draw(){
+	var rad = prompt("Enter a radius");
+    var col = prompt("Enter a color");
+    var radnum = parseInt(rad, 10);
+
+    
+
+	var sketch = document.getElementById('sketch');
+	var context = sketch.getContext("2d");	
+	
+	if (col == "red"){
+		context.fillStyle = "#ff0000";
+
+	}
+	else if (col == "blue"){
+		context.fillStyle = "#0000ff";
+	}
+	else if (col == "green"){
+		context.fillStyle = "#00ff00";
+    }
+    else{
+    	context.fillStyle = "000000";
+    }
 
     context.beginPath();
-	context.arc(50, 50, 50, 0, 2*Math.PI, true);
+	context.arc(50, 50, radnum, 0, 2*Math.PI, true);
 	context.closePath();
 	context.fill();
-}
 
+	
+
+}
 </script>
 </body>
 </html>
